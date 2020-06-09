@@ -2,17 +2,18 @@ import React, { Component } from 'react'
 
 export default class LoginControl extends Component {
 
-    constructor(props){
+    constructor(props) {
         super(props);
         this.handleLoginClick = this.handleLoginClick.bind(this);
         this.handleLogoutClick = this.handleLogoutClick.bind(this);
+        this.state = { isLoggedIn: false }
     }
-    handleLoginClick(){
+    handleLoginClick() {
         this.setState({
             isLoggedIn: true
         })
     }
-    handleLogoutClick(){
+    handleLogoutClick() {
         this.setState({
             isLoggedIn: false
         })
@@ -20,10 +21,10 @@ export default class LoginControl extends Component {
     render() {
         const isLoggedIn = this.state.isLoggedIn;
         let button;
-        if(isLoggedIn){
-            button = <LogoutButton onClick={this.handleLogoutClick}/>
-        }else{
-            button = <LoginButton onClick={this.handleLoginClick}/>
+        if (isLoggedIn) {
+            button = <LogoutButton onClick={this.handleLogoutClick} />
+        } else {
+            button = <LoginButton onClick={this.handleLoginClick} />
         }
 
         return (
@@ -33,13 +34,27 @@ export default class LoginControl extends Component {
             </div>
         )
     }
-}  
-
+}
+function UserGreeting(props) {
+    return <h1>Welcome Back!</h1>
+}
+function GuestGreeting(props) {
+    return <h1>Please Signup!</h1>
+}
+function Greeting(props) {
+    const isLoggedIn = props.isLoggedIn;
+    if (isLoggedIn) {
+        return <UserGreeting />
+    }
+    return <GuestGreeting />
+}
 class LoginButton extends Component {
     render() {
         return (
             <div>
-                
+                <button onClick={this.props.onClick}>
+                    Login
+                </button>
             </div>
         )
     }
@@ -49,7 +64,9 @@ class LogoutButton extends Component {
     render() {
         return (
             <div>
-                
+                <button onClick={this.props.onClick}>
+                    Logout
+                </button>
             </div>
         )
     }

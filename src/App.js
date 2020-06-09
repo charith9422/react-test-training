@@ -1,11 +1,13 @@
 import React, { Component } from 'react';
 import './App.css';
-import Test from './Test';
+import LoginControl from './LoginControl';
+import Toggle from './Toggle';
 
 function App() {
   return (
     <div className="App">
-      <Test></Test>
+      <LoginControl/>
+      <Toggle/>
       <Author authorname="Charith Abeygunawardhana - Virtusa"></Author>
     </div>
   );

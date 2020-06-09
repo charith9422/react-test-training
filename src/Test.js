@@ -8,7 +8,8 @@ export default class Test extends Component {
             content: "Content from state"
           // constructor is better place to set state and binding event handler methods
           // do not directly update state.use set state method 
-          // can use both state and props in same application   
+          // can use both state and props in same application
+          // props are the only way that react with their children  
         }
     }
 
