@@ -1,0 +1,62 @@
+constructor is better place to set state and binding event handler methods
+do not directly update state.use set state method 
+can use both state and props in same application
+props are the only way that react with their children
+Component to component communication is not supported(Uni-directional)
+All React components must act like pure functions with respect to their props
+State is similar to props, but it is private and fully controlled by the component
+
+FLUX
+
+Action
+Dispatcher
+Store
+View
+
+unidirectional data flow
+
+Dispatcher
+View sending actions to Dispatcher
+*Every store will recieve every action(flux have many stores and redux has only one)
+only one singleton Dispatcher
+
+Ex:
+User types in title for a todo and hits enter
+View capture this event and dispatches an add-todo action containing the title of the todo
+Every store will then recive this action
+
+Store
+Holds data 
+Only getters no setters contain
+Every time a store's data changes it must emit a change event. There should be many stores in each application
+
+Ex:
+Store receives an "add-todo" action
+Decides it is relevant and adds the todo to the list of things that need to be done today
+The store updates its data and then emits "change" event
+
+Action
+Define the internal API in your application
+
+Ex:
+When a user clicks delete on a completed todo a single 'delete-todo' action is dispatched
+{
+    type:   'delete-todo'
+    todoId: '1234'
+}
+
+View
+Renders on the dom
+
+Action->Dispatcher->Store->View
+
+REDUX
+
+Redux offers a solution of storing all application state in one place called store
+Components then dispatch state changes to store, not directly to other components
+Components that need to be aware of state changes can "Subscribe to the store"
+No direct relation with react. We can write application with angular,react...
+Action
+Reducers
+Store
+View
