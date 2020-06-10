@@ -3,6 +3,7 @@ import './App.css';
 import LoginControl from './LoginControl';
 import Toggle from './Toggle';
 import PropsTest from './PropsTest';
+import Clock from './Clock';
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
       <Welcome name="Lima"/>
       <Welcome name="Lora"/>
       <PropsTest />
+      <Clock/>
     </div>
   );
 }
