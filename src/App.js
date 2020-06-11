@@ -4,6 +4,8 @@ import LoginControl from './LoginControl';
 import Toggle from './Toggle';
 import PropsTest from './PropsTest';
 import Clock from './Clock';
+import EventsTest from './EventsTest';
+
 
 function App() {
   return (
@@ -16,6 +18,7 @@ function App() {
       <Welcome name="Lora"/>
       <PropsTest />
       <Clock/>
+      <EventsTest/>
     </div>
   );
 }
@@ -32,4 +35,5 @@ class Author extends Component {
 function Welcome(props) {
   return <h2>Hello,{props.name}</h2>
 }
+
 export default App;

@@ -5,6 +5,7 @@ props are the only way that react with their children
 Component to component communication is not supported(Uni-directional)
 All React components must act like pure functions with respect to their props
 State is similar to props, but it is private and fully controlled by the component
+The only place where you can assign this.state is the constructor
 
 FLUX
 
